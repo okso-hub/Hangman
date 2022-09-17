@@ -4,8 +4,15 @@ from os import system, name
 clear = lambda: system("clear") if name == "posix" else system("cls")
 
 
+def list_to_string(li):
+    string = ""
+    for i in li:
+        string += i
+
+    return string
+
 def main():
-    word = "okan"
+    word = str(input("Enter the word which should be guessed: "))
     hidden = ""
     for _ in word:
         hidden += "_"
@@ -18,11 +25,15 @@ def main():
         print(solution)
         guess = str(input("Enter character: "))
 
-        if guess.lower() in word.lower():
+        guess = guess.lower()
+        word = word.lower()
+        if guess in word:
             index = word.find(guess)
+            print(index)
             hidden = list(hidden)
+            
             hidden[index] = guess
-            solution = "".join(hidden)
+            solution = list_to_string(hidden)
             message = "You were right!"
 
             if not "_" in solution:
