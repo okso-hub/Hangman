@@ -28,6 +28,7 @@ def main():
     message = ""    
     wrong_chars = []
 
+    clear()
     while True:
         print(message, wrong_chars)
         print(solution)
