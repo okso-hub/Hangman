@@ -11,10 +11,18 @@ def list_to_string(li):
 
     return string
 
+
+def replace_char(str, index, replacement):
+    str = list(str)
+    str[index] = replacement
+
+    return list_to_string(str)
+
+
 def main():
-    word = str(input("Enter the word which should be guessed: "))
+    word = str(input("Enter the word which should be guessed: ")).lower()
     hidden = ""
-    for _ in word:
+    for _ in range(len(word)):
         hidden += "_"
     solution = hidden
     message = ""    
@@ -23,13 +31,11 @@ def main():
     while True:
         print(message, wrong_chars)
         print(solution)
-        guess = str(input("Enter character: "))
+        guess = str(input("Enter character: ")).lower()
 
-        guess = guess.lower()
-        word = word.lower()
         if guess in word:
             index = word.find(guess)
-            print(index)
+            word = replace_char(word, index, "0")
             hidden = list(hidden)
             
             hidden[index] = guess
