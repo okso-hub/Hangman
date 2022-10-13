@@ -16,7 +16,7 @@ Now the screen clears and you enter the mode where you guess the characters of t
 
 ```
  []
-_________
+_________ length: 9
 Enter character: 
 ```
 
@@ -24,7 +24,7 @@ Each wrong character will be stored inside of the list you see in the first line
 
 ```
 You were wrong! ['q', 'w', 'r', 't', 'z']
-_________
+_________ length: 9
 Enter character: u
 You guessed 6 times which is too much!
 ```
@@ -33,8 +33,8 @@ Each right character will be added to the hidden phrase. If you guessed everythi
 
 ```
 You were right! []
-pi_eapple
-Enter character: n
+pineappl_ length: 9
+Enter character: e
 The solution is pineapple!
 You won the game!
 ```
