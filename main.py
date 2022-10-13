@@ -20,7 +20,7 @@ def replace_char(str, index, replacement):
 
 
 def main():
-    word = str(input("Enter the word which should be guessed: ")).lower()
+    word = str(input("Enter the word which should be guessed: ")).lower().replace(" ", "")
     hidden = ""
     for _ in range(len(word)):
         hidden += "_"
@@ -31,7 +31,7 @@ def main():
     clear()
     while True:
         print(message, wrong_chars)
-        print(solution)
+        print(f"{solution} length: {len(solution)}")
         guess = str(input("Enter character: ")).lower()
 
         if guess in word:
